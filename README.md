@@ -10,3 +10,20 @@ Please visit the link above to download the dataset and the corresponding checkp
 
 ## EvoPRC Framework
 ![EvoPRC Framework](overviewofevoprc.png)
+
+
+## Evaluation
+
+You can run the evaluation with:
+
+```bash
+python test_PRC.py
+
+> **Note:** You need to modify the file/directory structure before running the script.
+
+## File Structure
+
+Before executing `test_PRC.py`, please reorganize the project to follow the same file structure as the SIL repository:
+
+
+
