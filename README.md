@@ -18,12 +18,13 @@ You can run the evaluation with:
 
 ```bash
 python test_PRC.py
+```
 
-> **Note:** You need to modify the file/directory structure before running the script.
+Note:** You need to modify the file/directory structure before running the script.
 
 ## File Structure
 
-Before executing `test_PRC.py`, please reorganize the project to follow the same file structure as the SIL repository:
+Before executing `test_PRC.py`, please reference the project to follow the same file structure as the SIL repository.
 
 
 
