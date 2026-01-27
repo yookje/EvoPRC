@@ -15,68 +15,8 @@ class TSPModel(nn.Module):
         self.encoded_nodes = None
 
 
+
     def forward(self, state, selected_node_list, solution, current_step,
-                select_probability_accumulate=None, decode_method=None,repair = False,beam_search=False, beam_size=None):
-
-        batch_size_V = state.data.size(0)
-        pproblem_size = state.data.size(1)
-        if self.mode == 'train':
-
-            probs = self.decoder(self.encoder(state.data), state.data, state.first_node, state.current_node, selected_node_list, current_step, batch_size_V, pproblem_size)
-
-            selected_student = probs.argmax(dim=1)
-
-            selected_teacher = solution[:, current_step - 1]
-            prob = probs[torch.arange(batch_size_V)[:, None], selected_teacher[:, None]].reshape(batch_size_V, 1)
-
-        if self.mode == 'test':
-
-            ##################333
-            #BEAM
-            ###################
-
-            # 첫 스텝에서만 인코딩 (step 1부터 beam search 시작)
-            if current_step <= 1:
-                self.encoded_nodes = self.encoder(state.data)
-            
-            probs = self.decoder(
-                self.encoded_nodes, state.data, state.first_node,
-                state.current_node, selected_node_list, current_step,
-                batch_size_V, pproblem_size, mode='test'
-            )
-        
-
-            # Beam search: 확률만 반환 (선택은 Beamsearch.advance에서)
-            return None, probs, None, None
-            ######################3
-            #
-            #beam end
-            #########################
-            if (decode_method == 'greedy' and repair == False):
-                if current_step <= 1:
-                    self.encoded_nodes = self.encoder(state.data)
-
-                probs = self.decoder(self.encoded_nodes, state.data,state.first_node, state.current_node, selected_node_list,
-                                     current_step, batch_size_V, pproblem_size,mode ='test')
-
-                selected_student = probs.argmax(dim=1)
-                selected_teacher = selected_student
-                prob = 1
-
-            if (decode_method == 'greedy' and repair == True) :
-
-                probs = self.decoder(self.encoder(state.data), state.data, state.first_node, state.current_node, selected_node_list,
-                                     current_step, batch_size_V, pproblem_size,mode ='test')
-
-                selected_student = probs.argmax(dim=1)
-
-                selected_teacher = selected_student
-                prob = probs[torch.arange(batch_size_V)[:, None], selected_teacher[:, None]].reshape(batch_size_V, 1)
-
-
-        return selected_teacher, prob, 1, selected_student
-
-    def forward_old(self, state, selected_node_list, solution, current_step,
                 select_probability_accumulate=None, decode_method=None,repair = False):
 
         batch_size_V = state.data.size(0)
