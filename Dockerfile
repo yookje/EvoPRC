@@ -28,7 +28,7 @@ RUN pip3 install matplotlib==3.5.2 && \
     pip3 install tqdm==4.64.1
 
 # Clone SIL repository
-RUN git clone https://github.com/CIAM-Group/SIL.git
+RUN git clone https://github.com/yookje/EvoPRC.git
 
 # Set the default command to bash
 CMD ["bash"]
