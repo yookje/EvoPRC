@@ -1,5 +1,4 @@
 # EvoPRC
-Gecco2026
 
 
 
