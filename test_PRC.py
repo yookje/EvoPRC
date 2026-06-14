@@ -137,8 +137,8 @@ if __name__ == "__main__":
         #1000: ['/data/MCTS_tsp1000_test_concorde.txt',  3, 3*const.POP_SIZE],
         #1000: ['/data/MCTS_tsp1000_test_concorde.txt', 128, 128],
         1000: ['/data/MCTS_tsp1000_test_concorde.txt', 128, 32*const.POP_SIZE],
-        5000: ['/data/test_tsp5000_lkh3_n16.txt', 4, 4],
-        #5000: ['/data/test_tsp5000_lkh3_n16.txt', 16, 4*const.POP_SIZE],
+        #5000: ['/data/test_tsp5000_lkh3_n16.txt', 4, 4],
+        5000: ['/data/test_tsp5000_lkh3_n16.txt', 16, 4*const.POP_SIZE],
         10000: ['/data/validation_TSP10000_n16.txt', 16, 4*const.POP_SIZE],
 
         #50000:  ['/data/test_tsp50000_lkh3_n16.txt', 16, 2*const.POP_SIZE],#*const.POP_SIZE], #['/data/test_tsp50000_lkh3_n16.txt', 16, 8],
