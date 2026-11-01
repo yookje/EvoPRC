@@ -1,7 +1,7 @@
 # EvoPRC
 
 ## Paper
-- Jieun Yook, Hybrid Genetic Algorithm with Neural Local Search for Large Scale Traveling Salesman Problems, to appear in *Proc. IEEE International Conference on Evolving and Adaptive Intelligent Systems 2026 (IEEE EAIS 2026)*, 2026. [[PDF]](Hybrid Genetic Algorithm with Neural Local Search for Large Scale Traveling Salesman Problems.pdf)
+- Jieun Yook, Hybrid Genetic Algorithm with Neural Local Search for Large Scale Traveling Salesman Problems, to appear in *Proc. IEEE International Conference on Evolving and Adaptive Intelligent Systems 2026 (IEEE EAIS 2026)*, 2026. [[PDF]](evoprc_paper.pdf)
 
 ## Acknowledgements
 EvoPRC's code implementation is based on the open-source implementation of SIL (CIAM-Group/SIL: `https://github.com/CIAM-Group/SIL.git`).
